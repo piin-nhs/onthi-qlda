@@ -2,15 +2,11 @@ export const teacherExams = [
   {
     seed: "de-thay-04-ai-cham-cong",
     domain: "face-attendance",
-    title: "Đề thầy mới 04 - Chấm công nhận diện khuôn mặt",
+    title: "BÀI KIỂM TRA THƯỜNG XUYÊN SỐ 4",
     context: {
       paragraph:
-        'Dự án "Hệ thống quản lý chấm công bằng nhận diện khuôn mặt" xây dựng giải pháp tự động ghi nhận thời gian làm việc bằng công nghệ nhận diện khuôn mặt, nâng cao độ chính xác và giảm gian lận.',
-      bullets: [
-        "BAC = 400 triệu đồng.",
-        "Thời gian dự kiến = 80 ngày làm việc.",
-        "Nhân sự: 01 PM, 01 Chuyên gia AI, 01 Kỹ sư phần cứng, 02 Lập trình viên, 01 Tester.",
-      ],
+        'Dự án “Hệ thống quản lý chấm công bằng nhận diện khuôn mặt” được triển khai nhằm xây dựng một giải pháp hiện đại, tự động hóa việc ghi nhận thời gian làm việc của nhân sự thông qua công nghệ nhận diện khuôn mặt, góp phần nâng cao độ chính xác và giảm thiểu gian lận. Tổng ngân sách của dự án (BAC) là 400 triệu đồng, với thời gian thực hiện dự kiến trong 80 ngày làm việc. Đội ngũ thực hiện bao gồm 01 Quản lý dự án (PM), 01 Chuyên gia AI, 01 Kỹ sư phần cứng, 02 Lập trình viên và 01 Kiểm thử phần mềm, đảm bảo đầy đủ năng lực để phát triển, tích hợp và kiểm thử hệ thống một cách hiệu quả.',
+      bullets: [],
     },
     meta: { duration: 60, totalPoints: 10 },
     questions: [
@@ -52,11 +48,11 @@ export const teacherExams = [
         answer: [
           "a. Rủi ro phía Buyer",
           "",
-          "| Rủi ro | Xác suất | Ảnh hưởng | Ưu tiên | Biện pháp ứng phó | Owner |",
-          "|---|---:|---|---|---|---|",
-          "| Khách hàng chậm chốt vị trí lắp camera | Trung bình | Trễ lắp đặt và test thực tế | Cao | Chốt sơ đồ lắp đặt theo milestone, có deadline phản hồi và escalation | PM/Buyer |",
-          "| Khách hàng thay đổi yêu cầu báo cáo chấm công | Trung bình | Scope creep, tăng effort dashboard | Trung bình | Dùng change request, đánh giá tác động chi phí/tiến độ trước khi duyệt | PM/HR |",
-          "| Chưa chuẩn bị danh sách nhân viên/dữ liệu mẫu | Cao | Chậm huấn luyện và kiểm thử mô hình AI | Cao | Lập checklist dữ liệu đầu vào, gửi mẫu sớm, kiểm tra chất lượng dữ liệu | PM/HR |",
+          "| Rủi ro | XS | AH | Biện pháp ứng phó |",
+          "|---|---|---|---|",
+          "| Khách hàng chậm chốt vị trí lắp camera | Trung bình | Cao: trễ lắp đặt và test thực tế | Chốt sơ đồ lắp đặt theo milestone, đặt deadline phản hồi và quy định escalation |",
+          "| Khách hàng thay đổi yêu cầu báo cáo chấm công | Trung bình | Trung bình/Cao: tăng effort dashboard, dễ scope creep | Dùng change request, đánh giá tác động chi phí/tiến độ trước khi duyệt |",
+          "| Khách hàng chưa chuẩn bị danh sách nhân viên/dữ liệu mẫu | Cao | Cao: chậm huấn luyện và kiểm thử mô hình AI | Lập checklist dữ liệu đầu vào, gửi mẫu sớm, kiểm tra chất lượng dữ liệu |",
           "",
           "b. EMV",
           "EMV = Probability x Impact = 25% x 50 triệu = 12,5 triệu.",
@@ -69,7 +65,7 @@ export const teacherExams = [
         title: "Câu 3",
         tags: ["Cost", "EVM"],
         prompt:
-          "Tại thời điểm hoàn thành 50% thời gian dự án: PV = 200 triệu, AC = 220 triệu, EV = 180 triệu. Tính CPI, SPI. Dự án có đạt mục tiêu không? Tính VAC và giải thích ý nghĩa với nhà đầu tư.",
+          "Tại thời điểm hoàn thành 50% thời gian dự án, các chỉ số cho thấy tình hình thực hiện đang có sự chênh lệch so với kế hoạch ban đầu. Cụ thể, chi phí dự tính (PV) đạt 200 triệu đồng, trong khi chi phí thực tế (AC) đã lên đến 220 triệu đồng. Đồng thời, giá trị thu được (EV) mới đạt 180 triệu đồng. Tính CPI, SPI. Dự án có đạt mục tiêu không? Tính VAC và giải thích ý nghĩa con số này với nhà đầu tư.",
         answer: [
           "Dữ liệu: BAC = 400 triệu, PV = 200 triệu, EV = 180 triệu, AC = 220 triệu.",
           "",
@@ -117,7 +113,7 @@ export const teacherExams = [
         title: "Câu 5",
         tags: ["Procurement"],
         prompt:
-          "Trong hợp đồng mua sắm Camera: Target Cost = 60 triệu, Target Fee = 6 triệu, sharing ratio 50/50, Actual Cost = 56 triệu. Tính phí và chi phí cuối cùng của nhà thầu.",
+          "Trong hợp đồng mua sắm Camera, với chi phí mục tiêu (Target Cost) là 60 triệu đồng và phí mục tiêu (Target Fee) là 6 triệu đồng cùng tỷ lệ chia sẻ 50/50, khi chi phí thực tế (Actual Cost) chỉ là 56 triệu đồng. Tính phí và chi phí cuối cùng của nhà thầu.",
         answer: [
           "Target Price = Target Cost + Target Fee = 60 + 6 = 66 triệu.",
           "Cost Variance = Target Cost - Actual Cost = 60 - 56 = 4 triệu tiết kiệm.",
@@ -132,15 +128,21 @@ export const teacherExams = [
   {
     seed: "de-thay-core-banking",
     domain: "banking",
-    title: "Đề thầy mới - Core Banking Ngân hàng X",
+    title: "Nâng cấp hệ thống Core Banking – Ngân hàng X",
     context: {
-      paragraph:
-        "Dự án nâng cấp hệ thống Core Banking tại Ngân hàng X nhằm tối ưu vận hành, tăng cường bảo mật và nâng cao trải nghiệm giao dịch.",
-      bullets: [
-        "BAC = 1.000.000.000 VNĐ.",
-        "Tiến độ triển khai = 120 ngày làm việc.",
-        "Nhân sự chủ chốt: 01 PM, 02 Chuyên gia Tài chính, 03 Kỹ sư Phần mềm, 02 Chuyên gia Bảo mật, 01 QA.",
-      ],
+      paragraph: [
+        "Tên dự án: Nâng cấp hệ thống Core Banking – Ngân hàng X",
+        "Mục tiêu: Tối ưu hóa năng lực vận hành, tăng cường tính bảo mật và nâng cao trải nghiệm giao dịch tại Ngân hàng X thông qua việc hiện đại hóa nền tảng Core Banking hiện có.",
+        "• Ngân sách dự kiến (BAC): 1.000.000.000 VNĐ (Một tỷ đồng).",
+        "• Tiến độ triển khai: Dự án được thực hiện trong vòng 120 ngày làm việc, bao gồm các giai đoạn từ khảo sát, phát triển đến kiểm thử và vận hành chính thức.",
+        "• Cơ cấu nhân sự chủ chốt: Dự án quy tụ đội ngũ chuyên môn cao gồm 09 thành viên:",
+        "  o 01 Quản trị dự án (PM): Điều phối chung và chịu trách nhiệm về tiến độ.",
+        "  o 02 Chuyên gia Tài chính: Tư vấn nghiệp vụ và quy trình ngân hàng.",
+        "  o 03 Kỹ sư Phần mềm: Trực tiếp thực thi nâng cấp hệ thống.",
+        "  o 02 Chuyên gia Bảo mật: Đảm bảo an toàn dữ liệu và phòng chống rủi ro.",
+        "  o 01 Chuyên viên Đảm bảo chất lượng (QA): Kiểm soát tiêu chuẩn và vận hành thử nghiệm.",
+      ].join("\n"),
+      bullets: [],
     },
     meta: { duration: 60, totalPoints: 10 },
     questions: [
@@ -178,11 +180,11 @@ export const teacherExams = [
         answer: [
           "a. Rủi ro bảo mật dữ liệu",
           "",
-          "| Rủi ro | Xác suất | Ảnh hưởng | Ưu tiên | Biện pháp ứng phó | Owner |",
-          "|---|---:|---|---|---|---|",
-          "| Lộ dữ liệu khách hàng khi chuyển đổi | Thấp/Trung bình | Rất cao: pháp lý, uy tín, bồi thường | Cao | Mã hóa, phân quyền, log truy cập, chạy migration thử và rollback plan | Bảo mật/Data |",
-          "| Lỗ hổng phân quyền sau nâng cấp | Trung bình | Giao dịch/tài khoản bị truy cập sai | Cao | Security review, penetration test, kiểm thử role-based access | Bảo mật/QA |",
-          "| Nhà thầu bảo mật phát hiện lỗ hổng muộn | Trung bình | Trễ go-live hoặc phải vá gấp | Trung bình/Cao | Đặt milestone kiểm thử sớm, SLA báo cáo, risk owner rõ | PM/Bảo mật |",
+          "| Rủi ro | XS | AH | Biện pháp ứng phó |",
+          "|---|---|---|---|",
+          "| Lộ dữ liệu khách hàng khi chuyển đổi | Thấp/Trung bình | Rất cao: ảnh hưởng pháp lý, uy tín, bồi thường | Mã hóa dữ liệu, phân quyền chặt, log truy cập, chạy migration thử và chuẩn bị rollback |",
+          "| Lỗ hổng phân quyền sau nâng cấp | Trung bình | Cao: tài khoản/giao dịch bị truy cập sai | Security review, penetration test, kiểm thử role-based access trước go-live |",
+          "| Phát hiện lỗ hổng bảo mật muộn | Trung bình | Cao: trễ vận hành chính thức hoặc phải vá gấp | Đặt milestone kiểm thử bảo mật sớm, SLA báo cáo rõ, có phương án vá/rollback |",
           "",
           "b. EMV = 5% x 200 triệu = 10 triệu.",
           "EMV 10 triệu là giá trị thiệt hại kỳ vọng để tham khảo dự phòng; vì impact rất lớn, vẫn phải có kế hoạch vận hành dự phòng, rollback và trực support khi cut-over.",
@@ -194,7 +196,7 @@ export const teacherExams = [
         title: "Câu 3",
         tags: ["Cost", "EVM"],
         prompt:
-          "Sau 30 ngày làm việc: PV = 250 triệu, EV = 200 triệu, AC = 210 triệu. Tính CPI, SPI. Tính ETC và EAC với giả thiết hiệu suất chi phí từ nay về sau theo đúng kế hoạch. Giải thích PV, EV, AC, CPI, SPI, ETC, EAC.",
+          "Sau 30 ngày làm việc:\n• PV = 250 triệu.\n• EV = 200 triệu.\n• AC = 210 triệu.\n• Tính CPI, SPI.\n• Tính ETC và EAC (Giả thiết hiệu suất chi phí từ nay về sau sẽ theo đúng kế hoạch).\n• Giải thích các chỉ số: PV, EV, AC, CPI, SPI, ETC, EAC là gì?",
         answer: [
           "Dữ liệu: BAC = 1.000 triệu, PV = 250 triệu, EV = 200 triệu, AC = 210 triệu.",
           "",
@@ -244,7 +246,7 @@ export const teacherExams = [
         title: "Câu 5",
         tags: ["Procurement"],
         prompt:
-          "Hợp đồng tư vấn bảo mật: Target Cost = 120 triệu, Target Fee = 15 triệu, sharing ratio 75/25, Actual Cost = 130 triệu. Tính Final Fee và Final Price.",
+          "Hợp đồng tư vấn bảo mật: Target Cost = 120 triệu, Target Fee = 15 triệu. Sharing ratio 75/25. Actual Cost = 130 triệu. Tính Final Fee và Final Price.",
         answer: [
           "Sharing ratio 75/25 là Buyer/Seller, nên seller share = 25%.",
           "Target Price = 120 + 15 = 135 triệu.",
@@ -259,15 +261,11 @@ export const teacherExams = [
   {
     seed: "de-thay-crm-ban-le",
     domain: "retail-crm",
-    title: "Đề thầy mới - CRM cho tập đoàn bán lẻ",
+    title: "Xây dựng Hệ thống Quản trị Quan hệ Khách hàng (CRM) cho Tập đoàn Bán lẻ",
     context: {
       paragraph:
-        'Dự án "Xây dựng Hệ thống Quản trị Quan hệ Khách hàng (CRM) cho Tập đoàn Bán lẻ" triển khai với mục tiêu đáp ứng yêu cầu kinh doanh và tối ưu trải nghiệm khách hàng.',
-      bullets: [
-        "BAC = 600.000.000 VNĐ.",
-        "Thời gian dự kiến = 90 ngày làm việc.",
-        "Nhân sự: 01 PM, 02 BA, 02 Lập trình viên, 01 Tester, 01 Chuyên viên Marketing.",
-      ],
+        'Dự án “Xây dựng Hệ thống Quản trị Quan hệ Khách hàng (CRM) cho Tập đoàn Bán lẻ” được triển khai với tổng ngân sách (BAC) là 600.000.000 VNĐ và thời gian thực hiện dự kiến trong 90 ngày làm việc. Đội ngũ tham gia dự án gồm 07 thành viên, bao gồm 01 Quản lý dự án (PM), 02 chuyên viên Phân tích nghiệp vụ (BA), 02 Lập trình viên, 01 Kiểm thử viên (Tester) và 01 Chuyên viên Marketing, nhằm đảm bảo việc phát triển hệ thống diễn ra hiệu quả, đáp ứng đầy đủ yêu cầu kinh doanh và tối ưu trải nghiệm khách hàng.',
+      bullets: [],
     },
     meta: { duration: 60, totalPoints: 10 },
     questions: [
@@ -303,15 +301,15 @@ export const teacherExams = [
         title: "Câu 2",
         tags: ["Risk", "EMV"],
         prompt:
-          'a. Xác định 03 rủi ro về mặt "Phạm vi dự án" (Scope Creep) và phân tích định tính.\n\nb. Rủi ro "Tích hợp dữ liệu lỗi với hệ thống cũ" có xác suất 15%, thiệt hại 50 triệu. Tính EMV. Giải thích chỉ số EMV là gì?',
+          'a. Xác định 03 rủi ro về mặt "Phạm vi dự án" (Scope Creep) và phân tích định tính.\n\nb. Rủi ro "Tích hợp dữ liệu lỗi với hệ thống cũ" có xác suất 15%, thiệt hại 50 triệu. Tính EMV.\nGiải thích chỉ số EMV là gì?',
         answer: [
           "a. Rủi ro Scope Creep",
           "",
-          "| Rủi ro | Xác suất | Ảnh hưởng | Ưu tiên | Biện pháp ứng phó | Owner |",
-          "|---|---:|---|---|---|---|",
-          "| Sponsor yêu cầu thêm dashboard ngoài baseline | Trung bình | Tăng effort, trễ thiết kế | Trung bình/Cao | Change request, đánh giá tác động và duyệt lại baseline | PM/Sponsor |",
-          "| Đội Sales yêu cầu thêm workflow sau khi chốt thiết kế | Cao | Trễ lập trình và test | Cao | Đóng băng yêu cầu theo milestone, gom vào phase sau nếu không khẩn cấp | PM/BA |",
-          "| Phát sinh tích hợp thêm hệ thống loyalty | Trung bình | Tăng rủi ro dữ liệu và chi phí | Cao | Impact analysis, prototype tích hợp, chỉ làm khi có phê duyệt ngân sách/tiến độ | PM/Tech |",
+          "| Rủi ro | XS | AH | Biện pháp ứng phó |",
+          "|---|---|---|---|",
+          "| Sponsor yêu cầu thêm dashboard ngoài baseline | Trung bình | Trung bình/Cao: tăng effort, trễ thiết kế | Dùng change request, đánh giá tác động và chỉ duyệt khi cập nhật baseline |",
+          "| Đội Sales yêu cầu thêm workflow sau khi chốt thiết kế | Cao | Cao: trễ lập trình và kiểm thử | Đóng băng yêu cầu theo milestone, gom yêu cầu không khẩn cấp vào phase sau |",
+          "| Phát sinh tích hợp thêm hệ thống loyalty | Trung bình | Cao: tăng rủi ro dữ liệu và chi phí | Impact analysis, prototype tích hợp, chỉ làm khi có phê duyệt ngân sách/tiến độ |",
           "",
           "b. EMV",
           "EMV = Probability x Impact = 15% x 50 triệu = 7,5 triệu.",
@@ -324,19 +322,18 @@ export const teacherExams = [
         title: "Câu 3",
         tags: ["Cost", "EVM"],
         prompt:
-          "Sau 30 ngày: PV = 200 triệu VNĐ, EV = 180 triệu VNĐ, AC = 190 triệu VNĐ. Tính CPI, SPI. Nhận xét tiến độ và chi phí. Tính ETC và EAC theo giả thiết các sai lệch chi phí vẫn tiếp diễn. Giải thích ngắn gọn PV, EV, AC, CPI, SPI, ETC và EAC.",
+          "Sau 30 ngày: PV = 200 triệu VNĐ , EV = 180 triệu VNĐ, AC = 190 triệu VNĐ.\n• Tính CPI, SPI. Nhận xét tiến độ và chi phí.\n• Tính ETC và EAC theo giả thiết các sai lệch chi phí vẫn tiếp diễn.\n• Giải thích ngắn gọn các chỉ số PV, EV, AC, CPI, SPI, ETC và EAC là gì?",
         answer: [
           "Dữ liệu: BAC = 600 triệu, PV = 200 triệu, EV = 180 triệu, AC = 190 triệu.",
           "",
-          "CPI = EV / AC = 180 / 190 = 0,95 nếu làm tròn 2 chữ số. CPI < 1 nên dự án vượt chi phí.",
+          "CPI = EV / AC = 180 / 190 = 0,947 ≈ 0,95. CPI < 1 nên dự án vượt chi phí.",
           "SPI = EV / PV = 180 / 200 = 0,90. SPI < 1 nên dự án chậm tiến độ.",
           "CV = EV - AC = 180 - 190 = -10 triệu.",
           "SV = EV - PV = 180 - 200 = -20 triệu.",
           "",
           "Sai lệch chi phí vẫn tiếp diễn:",
-          "ETC = (BAC - EV) / CPI = (600 - 180) / 0,95 = 442,11 triệu.",
-          "EAC = AC + ETC = 190 + 442,11 = 632,11 triệu.",
-          "Nếu dùng CPI chính xác 180/190 thì EAC xấp xỉ 633,33 triệu; khi làm bài nên thống nhất cách làm tròn.",
+          "ETC = (BAC - EV) / CPI = (600 - 180) / (180/190) = 443,33 triệu.",
+          "EAC = AC + ETC = 190 + 443,33 = 633,33 triệu.",
           "",
           "Giải thích: PV là giá trị kế hoạch, EV là giá trị đã làm được, AC là chi phí thực tế, CPI đo hiệu suất chi phí, SPI đo hiệu suất tiến độ, ETC là chi phí còn cần, EAC là tổng chi phí dự báo khi hoàn thành.",
         ].join("\n"),
@@ -364,7 +361,7 @@ export const teacherExams = [
         title: "Câu 5",
         tags: ["Procurement"],
         prompt:
-          "Hợp đồng FPIF: Target Cost = 80 triệu VNĐ, Target Fee = 10 triệu VNĐ, Actual Cost = 70 triệu VNĐ, sharing ratio 80/20. Tính Final Fee và Final Price.",
+          "Hợp đồng FPIF: Target Cost = 80 triệu VNĐ, Target Fee = 10 triệu VNĐ. Actual Cost = 70 triệu VNĐ. Sharing ratio 80/20. Tính Final Fee và Final Price.",
         answer: [
           "Sharing ratio 80/20 là Buyer/Seller, nên seller share = 20%.",
           "Target Price = 80 + 10 = 90 triệu.",
@@ -379,15 +376,15 @@ export const teacherExams = [
   {
     seed: "de-thay-thu-vien-xyz",
     domain: "library",
-    title: "Đề thầy mới - Thư viện thông minh XYZ",
+    title: "Xây dựng hệ thống quản lý thư viện thông minh cho trường Đại học XYZ",
     context: {
-      paragraph:
-        'Dự án "Xây dựng hệ thống quản lý thư viện thông minh cho trường Đại học XYZ" nhằm quản lý nghiệp vụ thư viện, hỗ trợ mượn/trả và kiểm thử hệ thống trong phạm vi 40 ngày làm việc.',
-      bullets: [
-        "BAC = 200 triệu VNĐ.",
-        "Thời gian = 40 ngày làm việc.",
-        "Nhân sự: PM, 01 Kỹ sư phân tích, 01 Thiết kế UI/UX, 02 Lập trình viên, 01 Tester.",
-      ],
+      paragraph: [
+        'Dự án: "Xây dựng hệ thống quản lý thư viện thông minh cho trường Đại học XYZ"',
+        "• Ngân sách (BAC): 200 triệu VNĐ.",
+        "• Thời gian: 40 ngày làm việc.",
+        "• Nhân sự: PM, 01 Kỹ sư phân tích, 01 Thiết kế UI/UX, 02 Lập trình viên, 01 Tester.",
+      ].join("\n"),
+      bullets: [],
     },
     meta: { duration: 60, totalPoints: 10 },
     questions: [
@@ -430,11 +427,11 @@ export const teacherExams = [
         answer: [
           "a. Rủi ro kỹ thuật",
           "",
-          "| Rủi ro | Xác suất | Ảnh hưởng | Ưu tiên | Biện pháp ứng phó | Owner |",
-          "|---|---:|---|---|---|---|",
-          "| Mất dữ liệu khi chuyển đổi | Trung bình | Cao: sai dữ liệu sách/bạn đọc, phải khôi phục | Cao | Sao lưu trước migration, chạy thử trên bản copy, đối soát và chuẩn bị rollback | PM/Lập trình viên |",
-          "| Thiết kế database chưa phù hợp nghiệp vụ | Trung bình | Cao: sửa nhiều chức năng mượn/trả, trễ tiến độ | Cao | Review mô hình dữ liệu với thư viện, prototype truy vấn chính, kiểm tra khóa/ràng buộc | Kỹ sư phân tích/Lập trình viên |",
-          "| Hiệu năng tra cứu và mượn/trả chậm | Trung bình | Trung bình/Cao: người dùng khó vận hành | Trung bình/Cao | Kiểm thử tải sớm, tối ưu index/truy vấn, theo dõi log hiệu năng | Lập trình viên/Tester |",
+          "| Rủi ro | XS | AH | Biện pháp ứng phó |",
+          "|---|---|---|---|",
+          "| Mất dữ liệu khi chuyển đổi | Trung bình | Cao: sai dữ liệu sách/bạn đọc, phải khôi phục | Sao lưu trước migration, chạy thử trên bản copy, đối soát và chuẩn bị rollback |",
+          "| Thiết kế database chưa phù hợp nghiệp vụ | Trung bình | Cao: sửa nhiều chức năng mượn/trả, trễ tiến độ | Review mô hình dữ liệu với thư viện, prototype truy vấn chính, kiểm tra khóa/ràng buộc |",
+          "| Hiệu năng tra cứu và mượn/trả chậm | Trung bình | Trung bình/Cao: người dùng khó vận hành | Kiểm thử tải sớm, tối ưu index/truy vấn, theo dõi log hiệu năng |",
           "",
           "b. EMV",
           "EMV = Probability x Impact = 15% x 40 triệu = 6 triệu.",
@@ -448,7 +445,7 @@ export const teacherExams = [
         title: "Câu 3",
         tags: ["Cost", "EVM"],
         prompt:
-          "Dự án chia làm 4 giai đoạn bằng nhau. Hết giai đoạn 2: AC = 120 triệu, khối lượng công việc hoàn thành = 45%. Tính CPI, SPI. Nhận xét tình trạng dự án. Dự báo ETC, EAC và VAC.",
+          "Dự án chia làm 4 giai đoạn bằng nhau. Hết giai đoạn 2:\n• Chi phí thực tế (AC) = 120 triệu.\n• Khối lượng công việc hoàn thành = 45%.\n• Tính CPI, SPI. Nhận xét tình trạng dự án.\n• Dự báo ETC, EAC và VAC.",
         answer: [
           "Dữ liệu: BAC = 200 triệu. Dự án có 4 giai đoạn bằng nhau, hết giai đoạn 2 nghĩa là kế hoạch hoàn thành 50%.",
           "PV = BAC x % kế hoạch = 200 x 50% = 100 triệu.",

@@ -999,6 +999,7 @@ input {
 .project-context {
   margin: 0;
   line-height: 1.7;
+  white-space: pre-wrap;
 }
 
 .context-list {
