@@ -48,7 +48,7 @@ export const teacherExams = [
         answer: [
           "a. Rủi ro phía Buyer",
           "",
-          "| Rủi ro | XS | AH | Biện pháp ứng phó |",
+          "| Rủi ro | Xác suất | Ảnh hưởng | Biện pháp ứng phó |",
           "|---|---|---|---|",
           "| Khách hàng chậm chốt vị trí lắp camera | Trung bình | Cao: trễ lắp đặt và test thực tế | Chốt sơ đồ lắp đặt theo milestone, đặt deadline phản hồi và quy định escalation |",
           "| Khách hàng thay đổi yêu cầu báo cáo chấm công | Trung bình | Trung bình/Cao: tăng effort dashboard, dễ scope creep | Dùng change request, đánh giá tác động chi phí/tiến độ trước khi duyệt |",
@@ -180,7 +180,7 @@ export const teacherExams = [
         answer: [
           "a. Rủi ro bảo mật dữ liệu",
           "",
-          "| Rủi ro | XS | AH | Biện pháp ứng phó |",
+          "| Rủi ro | Xác suất | Ảnh hưởng | Biện pháp ứng phó |",
           "|---|---|---|---|",
           "| Lộ dữ liệu khách hàng khi chuyển đổi | Thấp/Trung bình | Rất cao: ảnh hưởng pháp lý, uy tín, bồi thường | Mã hóa dữ liệu, phân quyền chặt, log truy cập, chạy migration thử và chuẩn bị rollback |",
           "| Lỗ hổng phân quyền sau nâng cấp | Trung bình | Cao: tài khoản/giao dịch bị truy cập sai | Security review, penetration test, kiểm thử role-based access trước go-live |",
@@ -305,7 +305,7 @@ export const teacherExams = [
         answer: [
           "a. Rủi ro Scope Creep",
           "",
-          "| Rủi ro | XS | AH | Biện pháp ứng phó |",
+          "| Rủi ro | Xác suất | Ảnh hưởng | Biện pháp ứng phó |",
           "|---|---|---|---|",
           "| Sponsor yêu cầu thêm dashboard ngoài baseline | Trung bình | Trung bình/Cao: tăng effort, trễ thiết kế | Dùng change request, đánh giá tác động và chỉ duyệt khi cập nhật baseline |",
           "| Đội Sales yêu cầu thêm workflow sau khi chốt thiết kế | Cao | Cao: trễ lập trình và kiểm thử | Đóng băng yêu cầu theo milestone, gom yêu cầu không khẩn cấp vào phase sau |",
@@ -427,7 +427,7 @@ export const teacherExams = [
         answer: [
           "a. Rủi ro kỹ thuật",
           "",
-          "| Rủi ro | XS | AH | Biện pháp ứng phó |",
+          "| Rủi ro | Xác suất | Ảnh hưởng | Biện pháp ứng phó |",
           "|---|---|---|---|",
           "| Mất dữ liệu khi chuyển đổi | Trung bình | Cao: sai dữ liệu sách/bạn đọc, phải khôi phục | Sao lưu trước migration, chạy thử trên bản copy, đối soát và chuẩn bị rollback |",
           "| Thiết kế database chưa phù hợp nghiệp vụ | Trung bình | Cao: sửa nhiều chức năng mượn/trả, trễ tiến độ | Review mô hình dữ liệu với thư viện, prototype truy vấn chính, kiểm tra khóa/ràng buộc |",

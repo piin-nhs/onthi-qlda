@@ -552,18 +552,14 @@ function buildRiskQuestion(domain, random) {
     emvRisk,
     emv,
     prompt: `a. ${option.prompt}\n\nb. Rủi ro "${emvRisk.risk}" có xác suất ${emvRisk.probability}%, thiệt hại dự kiến ${formatMoney(emvRisk.impact)}. Tính EMV và đề xuất dự phòng.`,
-    answer: `a. Bảng phân tích định tính:\n\n${riskTable(risks)}\n\n${option.answerIntro} Rủi ro có EMV/điểm cao hơn nên được theo dõi sát hơn trong risk register.\n\nb. Tính EMV\nEMV = Probability x Impact = ${emvRisk.probability}% x ${formatMoney(emvRisk.impact)} = ${formatMoney(emv)}.\n\nÝ nghĩa: EMV là giá trị tiền tệ kỳ vọng của rủi ro, dùng để ước lượng mức dự phòng hợp lý chứ không phải chắc chắn sẽ mất đúng số tiền này.\n\nĐề xuất dự phòng: dùng ${formatMoney(emv)} làm cơ sở contingency reserve cho rủi ro này, nhưng vẫn phải có biện pháp giảm thiểu cụ thể, trigger cảnh báo và owner chịu trách nhiệm. Nếu rủi ro có tác động rất cao, nên chuẩn bị thêm fallback plan.`,
+    answer: `a. Bảng phân tích định tính:\n\n${riskTable(risks)}\n\n${option.answerIntro} Khi làm bài, chỉ cần nêu đúng rủi ro, xác suất, ảnh hưởng và biện pháp ứng phó cụ thể; không cần thêm cột ưu tiên hay owner nếu đề không yêu cầu.\n\nb. Tính EMV\nEMV = Probability x Impact = ${emvRisk.probability}% x ${formatMoney(emvRisk.impact)} = ${formatMoney(emv)}.\n\nÝ nghĩa: EMV là giá trị tiền tệ kỳ vọng của rủi ro, dùng để ước lượng mức dự phòng hợp lý chứ không phải chắc chắn sẽ mất đúng số tiền này.\n\nĐề xuất dự phòng: dùng ${formatMoney(emv)} làm cơ sở contingency reserve cho rủi ro này, nhưng vẫn phải có biện pháp giảm thiểu cụ thể, trigger cảnh báo và fallback plan nếu rủi ro có tác động cao.`,
   };
 }
 
 function riskTable(rows) {
-  const header = "| Rủi ro | Xác suất | Ảnh hưởng | EMV/điểm | Ưu tiên | Biện pháp | Owner |\n|---|---:|---:|---:|---|---|---|";
+  const header = "| Rủi ro | Xác suất | Ảnh hưởng | Biện pháp ứng phó |\n|---|---|---|---|";
   const body = rows
-    .map((row) => {
-      const score = (row.probability / 100) * row.impact;
-      const priority = score >= 35 ? "Cao" : score >= 15 ? "Trung bình" : "Thấp";
-      return `| ${row.risk} | ${row.probability}% | ${formatMoney(row.impact)} | ${formatMoney(score)} | ${priority} | ${row.response} | ${row.owner} |`;
-    })
+    .map((row) => `| ${row.risk} | ${row.probability}% | ${formatMoney(row.impact)} | ${row.response} |`)
     .join("\n");
   return `${header}\n${body}`;
 }

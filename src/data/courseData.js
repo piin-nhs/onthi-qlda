@@ -415,7 +415,7 @@ export const chapters = [
       },
     ],
     checklist: [
-      "Câu rủi ro nên có bảng: Risk, Probability, Impact, Priority, Response, Owner.",
+      "Câu rủi ro theo mẫu thầy nên có bảng 4 cột: Rủi ro, Xác suất, Ảnh hưởng, Biện pháp ứng phó.",
       "EMV ghi rõ xác suất dạng thập phân nhân với thiệt hại.",
       "Không biến rủi ro thành issue; rủi ro phải có yếu tố chưa chắc xảy ra.",
       "Nếu đề hỏi Scope Creep, phải nêu thay đổi ngoài baseline và cơ chế change request.",
