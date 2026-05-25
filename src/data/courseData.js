@@ -181,6 +181,30 @@ export const chapters = [
         ],
       },
       {
+        title: "Tuyển dụng và phát triển đội",
+        body:
+          "Đề mới có thể hỏi trực tiếp quy trình tuyển dụng và phát triển đội ngũ trong dự án CNTT.",
+        bullets: [
+          "Xác định nhu cầu nhân sự từ phạm vi, WBS, tiến độ và kỹ năng cần có.",
+          "Lập tiêu chí chọn người: vai trò, năng lực chuyên môn, kinh nghiệm domain, kỹ năng phối hợp và tiêu chuẩn bảo mật.",
+          "Tuyển/chọn từ nguồn nội bộ, thuê ngoài hoặc vendor; đánh giá bằng phỏng vấn, bài test, hồ sơ và kinh nghiệm dự án tương tự.",
+          "Onboarding giúp thành viên hiểu mục tiêu, RACI, công cụ, quy trình báo cáo và quy tắc lưu tài liệu.",
+          "Phát triển đội bằng đào tạo, mentoring, workshop, review định kỳ và chia sẻ lessons learned.",
+        ],
+      },
+      {
+        title: "Maslow trong quản lý dự án",
+        body:
+          "Tháp Maslow giúp PM hiểu động lực của thành viên thay vì chỉ nhìn lương/thưởng.",
+        bullets: [
+          "Sinh lý: điều kiện làm việc, nghỉ ngơi và tải công việc ở mức chịu được.",
+          "An toàn: vai trò rõ, quy trình rõ, môi trường ít đổ lỗi, kỳ vọng ổn định.",
+          "Xã hội: cảm giác thuộc về nhóm, giao tiếp tốt và được hỗ trợ khi gặp khó.",
+          "Được tôn trọng: ghi nhận đóng góp, lắng nghe chuyên môn và trao quyền phù hợp.",
+          "Tự hoàn thiện: cơ hội học công nghệ mới, xử lý bài toán khó và phát triển nghề nghiệp.",
+        ],
+      },
+      {
         title: "Xử lý xung đột",
         body:
           "Trong dự án CNTT, xung đột thường đến từ ưu tiên kỹ thuật, tài nguyên, lịch, yêu cầu và chất lượng.",
@@ -197,6 +221,8 @@ export const chapters = [
       "Câu Tuckman phải nêu đúng giai đoạn và hành động PM trong giai đoạn đó.",
       "RACI nên trình bày dạng bảng, mỗi hàng công việc có đúng một A.",
       "Nếu đề hỏi autocratic, nêu rõ điều kiện: khẩn cấp, an toàn, bảo mật, thiếu kinh nghiệm, deadline gấp.",
+      "Câu tuyển dụng/phát triển đội nên đi từ nhu cầu nhân sự, chọn người, onboarding, đào tạo đến quản lý hiệu suất.",
+      "Câu Maslow nên nêu đủ 5 tầng và liên hệ cách PM tạo động lực cho đội dự án.",
     ],
     traps: [
       "Gán A cho nhiều người trong một công việc.",
@@ -275,11 +301,25 @@ export const chapters = [
           "Tài liệu nên lưu ở một nơi chung như PMIS, drive dự án hoặc công cụ quản lý task để truy vết.",
         ],
       },
+      {
+        title: "Project Archive",
+        body:
+          "Đề mới có thể hỏi tầm quan trọng của lưu trữ tài liệu dự án khi đóng dự án hoặc bàn giao vận hành.",
+        bullets: [
+          "Project archive lưu các tài liệu chính thức: kế hoạch, baseline, yêu cầu, thiết kế, RACI, biên bản, change request, risk/issue log, nghiệm thu, hợp đồng và lessons learned.",
+          "Giúp truy vết quyết định, chứng minh phạm vi đã được duyệt và xử lý tranh chấp với stakeholder/vendor.",
+          "Hỗ trợ bàn giao vận hành vì đội sau dự án có tài liệu cấu hình, hướng dẫn và tiêu chí nghiệm thu.",
+          "Tạo kho tri thức cho dự án sau, giúp ước tính tốt hơn và tránh lặp lại lỗi cũ.",
+          "Cần có cấu trúc thư mục, phân quyền, quy tắc đặt tên phiên bản, owner cập nhật và bản chính thức.",
+        ],
+      },
     ],
     checklist: [
       "Tính kênh truyền thông bằng tổng số người trong dự án, bao gồm PM nếu đề nói PM nằm trong đội.",
       "Kế hoạch truyền thông phải có tần suất, kênh, người nhận, người gửi và nội dung.",
       "Với dự án lớn, kết hợp họp ngắn, dashboard, biên bản và nơi lưu trữ chung.",
+      "Nếu hỏi Sponsor, đề xuất kết hợp báo cáo push, dashboard pull và họp interactive theo milestone.",
+      "Nếu hỏi Project Archive, nhấn mạnh truy vết, bàn giao, pháp lý/hợp đồng và lessons learned.",
     ],
     traps: [
       "Quên PM khi tính n.",
@@ -340,6 +380,17 @@ export const chapters = [
         ],
       },
       {
+        title: "Rủi ro Buyer, bảo mật và Scope Creep",
+        body:
+          "Ba đề mới đổi cách hỏi: không chỉ rủi ro chung mà còn khoanh vào phía Buyer, bảo mật dữ liệu hoặc phạm vi dự án.",
+        bullets: [
+          "Rủi ro Buyer: khách hàng chậm phản hồi, đổi đầu mối, chưa chuẩn bị dữ liệu/người nghiệm thu hoặc yêu cầu thay đổi sau khi đã chốt.",
+          "Rủi ro bảo mật dữ liệu: lộ dữ liệu, phân quyền sai, mã hóa không đạt chuẩn, log/monitoring thiếu và nhà thầu bảo mật bàn giao trễ.",
+          "Scope creep: thêm chức năng, báo cáo, tích hợp hoặc chi nhánh ngoài baseline mà không có change request được duyệt.",
+          "Biện pháp chung: thống nhất đầu mối phê duyệt, change control, tiêu chí nghiệm thu, lịch phản hồi và escalation path.",
+        ],
+      },
+      {
         title: "EMV và dự phòng",
         body:
           "Expected Monetary Value giúp quy đổi rủi ro thành giá trị tiền kỳ vọng.",
@@ -367,6 +418,8 @@ export const chapters = [
       "Câu rủi ro nên có bảng: Risk, Probability, Impact, Priority, Response, Owner.",
       "EMV ghi rõ xác suất dạng thập phân nhân với thiệt hại.",
       "Không biến rủi ro thành issue; rủi ro phải có yếu tố chưa chắc xảy ra.",
+      "Nếu đề hỏi Scope Creep, phải nêu thay đổi ngoài baseline và cơ chế change request.",
+      "Nếu đề hỏi Buyer, tập trung vào phản hồi, nghiệm thu, dữ liệu đầu vào và quyết định của khách hàng.",
     ],
     traps: [
       "Ghi rủi ro quá chung như 'dự án thất bại' thay vì sự kiện cụ thể.",
@@ -1946,6 +1999,18 @@ export const flashcards = [
     back: "WBS phân rã công việc/deliverable; OBS phân rã tổ chức/nhóm/người chịu trách nhiệm.",
   },
   {
+    id: "hr-11",
+    chapterId: "hr",
+    front: "Quy trình tuyển dụng và phát triển đội dự án CNTT nên nêu những bước nào?",
+    back: "Xác định nhu cầu nhân sự, lập tiêu chí chọn người, tuyển/chọn, onboarding, đào tạo/phát triển đội và quản lý hiệu suất.",
+  },
+  {
+    id: "hr-12",
+    chapterId: "hr",
+    front: "Maslow giúp PM quản lý động lực đội dự án như thế nào?",
+    back: "PM cần quan tâm từ điều kiện làm việc và an toàn vai trò đến gắn kết nhóm, ghi nhận đóng góp và cơ hội phát triển năng lực.",
+  },
+  {
     id: "communications-4",
     chapterId: "communications",
     front: "Status report, progress report và forecast khác nhau thế nào?",
@@ -1980,6 +2045,18 @@ export const flashcards = [
     chapterId: "communications",
     front: "Vì sao không nên che giấu tin xấu trong dự án?",
     back: "Tin xấu bị giấu làm sponsor không kịp quyết định, issue phình to và mất niềm tin. PM nên báo sớm với bối cảnh và phương án xử lý.",
+  },
+  {
+    id: "communications-10",
+    chapterId: "communications",
+    front: "Project Archive quan trọng ở đâu?",
+    back: "Giúp truy vết quyết định, bàn giao vận hành, chứng minh phạm vi/nghiệm thu, xử lý tranh chấp và lưu lessons learned cho dự án sau.",
+  },
+  {
+    id: "communications-11",
+    chapterId: "communications",
+    front: "Muốn sponsor nắm kịp tiến độ nên phối hợp 3 cách truyền thông nào?",
+    back: "Báo cáo tuần dạng push, dashboard/PMIS dạng pull và họp milestone/steering dạng interactive để ra quyết định.",
   },
   {
     id: "risk-4",
@@ -2022,6 +2099,18 @@ export const flashcards = [
     chapterId: "risk",
     front: "Escalate risk nghĩa là gì?",
     back: "Chuyển rủi ro lên cấp cao hơn khi nó vượt thẩm quyền hoặc khả năng xử lý của PM/team.",
+  },
+  {
+    id: "risk-11",
+    chapterId: "risk",
+    front: "Scope creep là gì?",
+    back: "Là phạm vi dự án mở rộng ngoài baseline mà không được kiểm soát bằng change request, làm tăng chi phí, trễ tiến độ hoặc giảm chất lượng.",
+  },
+  {
+    id: "risk-12",
+    chapterId: "risk",
+    front: "Rủi ro phía Buyer thường là gì?",
+    back: "Khách hàng chậm phản hồi, đổi yêu cầu, thiếu dữ liệu đầu vào, không bố trí người nghiệm thu hoặc chậm phê duyệt quyết định.",
   },
   {
     id: "procurement-4",
@@ -2135,6 +2224,7 @@ export const projectDomains = [
     sponsor: "Khối vận hành ngân hàng",
     owner: "Giám đốc CNTT",
     deliverables: ["chuyển đổi dữ liệu", "nâng cấp bảo mật", "kiểm thử tích hợp", "đào tạo nhân viên"],
+    raciTasks: ["Đánh giá hệ thống cũ", "Chuyển đổi dữ liệu", "Kiểm thử tải", "Đào tạo nhân viên ngân hàng"],
     roles: [
       "PM",
       "Chuyên gia tài chính",
@@ -2149,7 +2239,45 @@ export const projectDomains = [
       "lỗ hổng bảo mật phát hiện muộn",
       "người dùng nghiệp vụ không tham gia UAT đầy đủ",
     ],
+    securityRisks: [
+      "dữ liệu khách hàng bị lộ trong quá trình chuyển đổi",
+      "lỗ hổng phân quyền cho phép truy cập sai tài khoản",
+      "mã hóa dữ liệu nhạy cảm không đạt chuẩn ngân hàng",
+      "log giao dịch thiếu giám sát bất thường",
+      "nhà thầu kiểm thử bảo mật bàn giao báo cáo trễ",
+    ],
+    externalPeople: [0, 1, 2],
     procurement: "dịch vụ kiểm thử bảo mật độc lập",
+  },
+  {
+    id: "face-attendance",
+    name: "hệ thống quản lý chấm công bằng nhận diện khuôn mặt",
+    sponsor: "Ban Giám đốc nhân sự",
+    owner: "Phòng Công nghệ thông tin",
+    deliverables: ["lựa chọn thiết bị Camera", "huấn luyện mô hình AI", "dashboard quản lý", "lắp đặt thực tế"],
+    raciTasks: ["Lựa chọn thiết bị Camera", "Huấn luyện mô hình AI", "Xây dựng Dashboard quản lý", "Lắp đặt thực tế"],
+    roles: ["PM", "Chuyên gia AI", "Kỹ sư phần cứng", "Lập trình viên", "Tester"],
+    teamPatterns: [[1, 1, 1, 2, 1]],
+    risks: [
+      "thiết bị phần cứng về chậm",
+      "mô hình AI nhận diện sai trong điều kiện ánh sáng yếu",
+      "dữ liệu khuôn mặt cần bảo mật cao",
+      "nhân viên phản đối vì lo ngại quyền riêng tư",
+    ],
+    buyerRisks: [
+      "khách hàng chậm chốt vị trí lắp camera",
+      "đầu mối nhân sự thay đổi yêu cầu báo cáo chấm công",
+      "khách hàng chưa chuẩn bị danh sách nhân viên để huấn luyện mô hình",
+      "khách hàng chậm nghiệm thu lắp đặt thực tế",
+      "quy định nội bộ về dữ liệu khuôn mặt chưa được phê duyệt",
+    ],
+    securityRisks: [
+      "dữ liệu khuôn mặt bị truy cập trái phép",
+      "camera lưu ảnh thô lâu hơn chính sách cho phép",
+      "quyền truy cập dashboard chấm công phân quyền chưa chặt",
+    ],
+    externalPeople: [0, 2, 3],
+    procurement: "thiết bị Camera và dịch vụ lắp đặt nhận diện khuôn mặt",
   },
   {
     id: "hospital",
@@ -2179,7 +2307,43 @@ export const projectDomains = [
       "traffic tăng đột biến trong ngày khuyến mãi",
       "phạm vi tính năng marketing mở rộng liên tục",
     ],
+    scopeRisks: [
+      "phòng marketing liên tục thêm chương trình khuyến mãi ngoài baseline",
+      "đại diện cửa hàng yêu cầu thêm báo cáo vận hành chưa được duyệt",
+      "tích hợp loyalty phát sinh thêm sau khi đã chốt phạm vi",
+      "sponsor muốn mở rộng kênh bán hàng khi chưa đánh giá tác động",
+    ],
     procurement: "dịch vụ cổng thanh toán trực tuyến",
+  },
+  {
+    id: "retail-crm",
+    name: "hệ thống quản trị quan hệ khách hàng (CRM) cho tập đoàn bán lẻ",
+    sponsor: "Giám đốc kinh doanh tập đoàn",
+    owner: "Phòng Chuyển đổi số",
+    deliverables: ["khảo sát hành vi khách hàng", "thiết kế luồng dữ liệu", "module tích hợp", "đào tạo đội ngũ Sales"],
+    raciTasks: ["Khảo sát hành vi khách hàng", "Thiết kế luồng dữ liệu", "Lập trình Module tích hợp", "Đào tạo đội ngũ Sales"],
+    roles: ["PM", "Chuyên viên Phân tích nghiệp vụ (BA)", "Lập trình viên", "Kiểm thử viên (Tester)", "Chuyên viên Marketing"],
+    teamPatterns: [[1, 2, 2, 1, 1]],
+    risks: [
+      "tích hợp dữ liệu lỗi với hệ thống cũ",
+      "đội Sales nhập dữ liệu khách hàng không nhất quán",
+      "phạm vi báo cáo marketing mở rộng liên tục",
+      "khách hàng dùng thử CRM phản hồi chậm",
+    ],
+    buyerRisks: [
+      "sponsor chậm phê duyệt luồng dữ liệu khách hàng",
+      "đội Sales không tham gia đầy đủ buổi đào tạo",
+      "phòng Marketing thay đổi tiêu chí phân khúc khách hàng",
+    ],
+    scopeRisks: [
+      "yêu cầu thêm dashboard marketing ngoài phạm vi ban đầu",
+      "đề nghị tích hợp thêm hệ thống loyalty chưa có trong baseline",
+      "đội Sales yêu cầu thêm workflow chăm sóc khách hàng sau khi đã chốt thiết kế",
+      "sponsor muốn mở rộng CRM sang chi nhánh mới mà chưa điều chỉnh ngân sách",
+      "báo cáo quản trị phát sinh thêm nhiều chỉ tiêu chưa được duyệt change request",
+    ],
+    externalPeople: [0, 1, 2],
+    procurement: "module tích hợp CRM",
   },
   {
     id: "city",

@@ -21,6 +21,7 @@ import {
   X,
 } from "lucide-react";
 import { chapters, flashcards, formulaEquivalents, formulas, learningMethods, theoryNotes } from "./data/courseData";
+import { teacherExams } from "./data/teacherExams";
 import {
   calculateEvm,
   calculateIncentive,
@@ -88,6 +89,13 @@ function toNumber(value) {
 
 function formatIndex(value) {
   return Number.isFinite(value) ? value.toFixed(2) : "N/A";
+}
+
+function teacherExamLabel(title) {
+  return title
+    .replace("Đề thầy mới 04 -", "Đề 04 -")
+    .replace("Đề thầy mới -", "Đề")
+    .replace("Đề thầy mới", "Đề");
 }
 
 function costStatus(cpi) {
@@ -803,6 +811,14 @@ function ExamView({ progress, setProgress }) {
     regenerate(seedInput.trim() || makeSeed());
   }
 
+  function loadTeacherExam(nextExam) {
+    setExam(nextExam);
+    setSeedInput(nextExam.seed);
+    setVisibleAnswers({});
+    setTimerRunning(false);
+    setSecondsLeft(60 * 60);
+  }
+
   function exportExam() {
     const text = [
       exam.title,
@@ -842,6 +858,26 @@ function ExamView({ progress, setProgress }) {
           <Download size={17} />
           Xuất TXT
         </button>
+      </section>
+
+      <section className="panel teacher-exam-panel">
+        <div>
+          <p className="eyebrow">Đề mới của thầy</p>
+          <h2>Chọn nhanh đề mẫu</h2>
+        </div>
+        <div className="teacher-exam-buttons">
+          {teacherExams.map((item) => (
+            <button
+              className={cx("secondary-button", exam.seed === item.seed && "active-teacher-exam")}
+              key={item.seed}
+              onClick={() => loadTeacherExam(item)}
+              type="button"
+            >
+              <ClipboardCheck size={17} />
+              {teacherExamLabel(item.title)}
+            </button>
+          ))}
+        </div>
       </section>
 
       <section className="exam-layout">

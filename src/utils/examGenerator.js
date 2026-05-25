@@ -140,6 +140,16 @@ const q1Theory = [
     prompt:
       "Nêu các phương pháp giải quyết xung đột trong dự án. PM nên chọn phương pháp nào khi có mâu thuẫn kỹ thuật giữa hai lập trình viên?",
   },
+  {
+    id: "staffing",
+    title: "Tuyển dụng và phát triển đội",
+    prompt: "Trình bày quy trình tuyển dụng và phát triển đội ngũ trong dự án CNTT.",
+  },
+  {
+    id: "maslow",
+    title: "Tháp nhu cầu Maslow",
+    prompt: "Trình bày lý thuyết về Tháp nhu cầu Maslow trong quản lý nhân sự dự án.",
+  },
 ];
 
 function joinShort(list, count = 2) {
@@ -194,6 +204,41 @@ function buildQ1TheoryAnswer(theory, domain, team, raci) {
     ].join("\n");
   }
 
+  if (theory.id === "staffing") {
+    return [
+      "Quy trình tuyển dụng và phát triển đội ngũ dự án CNTT",
+      "1. Xác định nhu cầu nhân sự: dựa vào phạm vi, WBS, tiến độ và kỹ năng cần có để lập danh sách vai trò, số lượng, thời điểm tham gia.",
+      "2. Lập tiêu chí tuyển/chọn: mô tả công việc, năng lực kỹ thuật, kinh nghiệm domain, kỹ năng phối hợp, yêu cầu bảo mật và tiêu chuẩn chất lượng.",
+      "3. Tìm và lựa chọn nhân sự: có thể dùng nguồn nội bộ, thuê ngoài, vendor hoặc chuyên gia; đánh giá bằng CV, phỏng vấn, bài test, portfolio hoặc kinh nghiệm dự án tương tự.",
+      "4. Onboarding: giới thiệu mục tiêu dự án, phạm vi, RACI, công cụ, quy trình báo cáo, quy tắc lưu tài liệu và tiêu chuẩn bàn giao.",
+      "5. Phát triển đội: đào tạo kỹ thuật/nghiệp vụ, mentoring, pair work, workshop, review định kỳ và chia sẻ lessons learned.",
+      "6. Quản lý hiệu suất: theo dõi tiến độ, chất lượng, issue, phản hồi, ghi nhận đóng góp và xử lý thiếu hụt năng lực kịp thời.",
+      "",
+      `Liên hệ trực tiếp với dự án ${domain.name}`,
+      `Dự án có các hạng mục như ${deliverables}, đội gồm ${teamSummary}. PM cần bảo đảm ${analyst} hiểu nghiệp vụ, ${developer} đủ năng lực triển khai, ${tester} có tiêu chuẩn kiểm thử rõ và các vai trò chuyên môn được đưa vào đúng thời điểm.`,
+      `Nếu phát sinh rủi ro như ${risks}, PM cần bổ sung đào tạo, gọi chuyên gia, điều chỉnh phân công hoặc dùng vendor để tránh ảnh hưởng tiến độ và chất lượng.`,
+      "Kết luận nên viết trong bài: tuyển đúng người mới là bước đầu; phát triển đội và quản lý hiệu suất trong suốt dự án mới giúp nhóm đạt mục tiêu.",
+    ].join("\n");
+  }
+
+  if (theory.id === "maslow") {
+    return [
+      "Tháp nhu cầu Maslow trong quản lý nhân sự dự án",
+      "Maslow cho rằng nhu cầu con người có thể nhìn theo 5 tầng: sinh lý, an toàn, xã hội, được tôn trọng và tự hoàn thiện. Khi nhu cầu nền tảng chưa được đáp ứng, nhân sự khó tập trung vào nhu cầu cao hơn.",
+      "",
+      "Áp dụng cho đội dự án CNTT",
+      "1. Sinh lý: điều kiện làm việc tối thiểu, thời gian nghỉ, khối lượng công việc không quá tải kéo dài.",
+      "2. An toàn: hợp đồng/thu nhập ổn định, vai trò rõ, quy trình rõ, môi trường ít đổ lỗi khi phát hiện lỗi.",
+      "3. Xã hội: cảm giác thuộc về nhóm, giao tiếp cởi mở, phối hợp giữa PM, nghiệp vụ, lập trình và kiểm thử.",
+      "4. Được tôn trọng: ghi nhận đóng góp, lắng nghe ý kiến chuyên môn, giao quyền phù hợp.",
+      "5. Tự hoàn thiện: cơ hội học công nghệ mới, giải quyết bài toán khó, đề xuất cải tiến và phát triển nghề nghiệp.",
+      "",
+      `Liên hệ trực tiếp với dự án ${domain.name}`,
+      `Với các đầu việc như ${tasks}, PM có thể dùng Maslow để giữ động lực: làm rõ deadline và RACI để tạo cảm giác an toàn, tổ chức review/demo để tăng phối hợp, ghi nhận người xử lý tốt các phần ${deliverables}, và tạo cơ hội học hỏi khi gặp rủi ro ${risks}.`,
+      "Kết luận nên viết trong bài: Maslow giúp PM hiểu động lực không chỉ đến từ tiền thưởng; đội làm việc tốt hơn khi nhu cầu nền tảng, quan hệ nhóm, sự ghi nhận và cơ hội phát triển đều được quan tâm.",
+    ].join("\n");
+  }
+
   return [
     "Các phương pháp giải quyết xung đột",
     "Confronting / problem solving: đối diện vấn đề, dùng dữ kiện để xử lý nguyên nhân gốc; thường là cách tốt nhất cho xung đột kỹ thuật.",
@@ -220,7 +265,7 @@ const raciTasks = [
 ];
 
 function buildTeam(domain, random) {
-  const counts = pick(random, teamPatterns);
+  const counts = pick(random, domain.teamPatterns || teamPatterns);
   return domain.roles.slice(0, counts.length).map((role, index) => ({
     role,
     count: counts[index] || 1,
@@ -266,7 +311,8 @@ function makeRaciRow(task, assignments) {
 }
 
 function buildRaci(domain, random) {
-  const tasks = sample(random, raciTasks, 4);
+  const taskPool = domain.raciTasks?.length ? domain.raciTasks : raciTasks;
+  const tasks = sample(random, taskPool, Math.min(4, taskPool.length));
   const allRoles = domain.roles;
   const findRole = (patterns, fallbackIndex, fallback) =>
     allRoles.find((role) => patterns.some((pattern) => role.toLowerCase().includes(pattern))) ||
@@ -279,9 +325,48 @@ function buildRaci(domain, random) {
   const designer = findRole(["ui/ux", "thiết kế"], 2, frontend);
   const developer = backend;
   const tester = findRole(["tester", "qa", "kiểm thử"], 4, "Tester");
+  const ai = findRole(["ai", "machine learning", "mô hình"], 1, developer);
+  const hardware = findRole(["phần cứng", "hardware", "thiết bị"], 2, developer);
+  const security = findRole(["bảo mật", "security"], 3, tester);
+  const finance = findRole(["tài chính", "ngân hàng"], 1, analyst);
+  const marketing = findRole(["marketing", "sales"], 5, analyst);
+  const data = findRole(["data", "dữ liệu", "quản trị"], 5, developer);
   const owner = "Đại diện chủ đầu tư";
 
   const mapping = tasks.map((task) => {
+    if (task.includes("Camera")) {
+      return makeRaciRow(task, { R: hardware, A: pm, C: [ai, owner], I: tester });
+    }
+    if (task.includes("Huấn luyện") || task.includes("AI")) {
+      return makeRaciRow(task, { R: ai, A: pm, C: [developer, analyst], I: [owner, tester] });
+    }
+    if (task.includes("Dashboard")) {
+      return makeRaciRow(task, { R: developer, A: pm, C: [analyst, owner], I: tester });
+    }
+    if (task.includes("Lắp đặt")) {
+      return makeRaciRow(task, { R: hardware, A: pm, C: [owner, tester], I: ai });
+    }
+    if (task.includes("Đánh giá hệ thống cũ")) {
+      return makeRaciRow(task, { R: analyst, A: pm, C: [developer, security, owner], I: tester });
+    }
+    if (task.includes("Kiểm thử tải")) {
+      return makeRaciRow(task, { R: tester, A: pm, C: [developer, security], I: owner });
+    }
+    if (task.includes("nhân viên ngân hàng")) {
+      return makeRaciRow(task, { R: finance, A: pm, C: [security, tester], I: [owner, developer] });
+    }
+    if (task.includes("hành vi khách hàng")) {
+      return makeRaciRow(task, { R: analyst, A: pm, C: [marketing, owner], I: developer });
+    }
+    if (task.includes("luồng dữ liệu")) {
+      return makeRaciRow(task, { R: data, A: pm, C: [analyst, developer, owner], I: tester });
+    }
+    if (task.includes("Module tích hợp")) {
+      return makeRaciRow(task, { R: developer, A: pm, C: [analyst, data, tester], I: owner });
+    }
+    if (task.includes("Sales")) {
+      return makeRaciRow(task, { R: marketing, A: pm, C: [analyst, owner], I: developer });
+    }
     if (task.includes("Thu thập")) {
       return makeRaciRow(task, { R: analyst, A: pm, C: owner, I: [developer, tester] });
     }
@@ -360,6 +445,9 @@ function riskResponseFor(risk) {
   if (text.includes("thiết bị") || text.includes("giao trễ") || text.includes("vendor") || text.includes("dịch vụ")) {
     return "Transfer/Mitigate: đưa SLA, mốc giao hàng, phạt trễ vào hợp đồng và chuẩn bị nhà cung cấp/phương án thay thế.";
   }
+  if (text.includes("buyer") || text.includes("khách hàng") || text.includes("sponsor") || text.includes("sales")) {
+    return "Mitigate: thống nhất đầu mối phê duyệt, lịch phản hồi, tiêu chí nghiệm thu và cơ chế escalation khi khách hàng phản hồi chậm.";
+  }
   if (text.includes("thay đổi") || text.includes("phạm vi") || text.includes("yêu cầu") || text.includes("quy định pháp lý")) {
     return "Mitigate/Avoid: dùng change control, đóng băng yêu cầu theo milestone và yêu cầu sponsor phê duyệt tác động chi phí/tiến độ.";
   }
@@ -389,11 +477,58 @@ function riskOwnerFor(domain, risk) {
   if (text.includes("người dùng") || text.includes("phụ huynh") || text.includes("bác sĩ") || text.includes("yêu cầu") || text.includes("uat")) {
     return findDomainRole(domain, ["analyst", "ba", "nghiệp vụ", "product", "chuyên viên"], 1, "BA/PM");
   }
+  if (text.includes("buyer") || text.includes("khách hàng") || text.includes("sponsor") || text.includes("sales")) {
+    return "PM/Business Owner";
+  }
   return "PM";
 }
 
-function buildRiskRows(domain, random) {
-  const selectedRisks = sample(random, domain.risks, 3);
+function riskOptionsFor(domain) {
+  const options = [
+    {
+      id: "general",
+      prompt: "Xác định 3 rủi ro lớn của dự án và phân tích định tính.",
+      answerIntro:
+        "Phân tích định tính không chỉ liệt kê rủi ro. Cần nêu xác suất, ảnh hưởng, mức ưu tiên, owner và biện pháp phản ứng.",
+      risks: domain.risks,
+    },
+  ];
+
+  if (domain.buyerRisks?.length) {
+    options.push({
+      id: "buyer",
+      prompt: "Liệt kê 3 rủi ro về phía khách hàng (Buyer) và phân tích định tính.",
+      answerIntro:
+        "Rủi ro phía Buyer thường đến từ phản hồi chậm, thay đổi yêu cầu, thiếu người nghiệm thu hoặc không thống nhất đầu mối quyết định.",
+      risks: domain.buyerRisks,
+    });
+  }
+
+  if (domain.securityRisks?.length) {
+    options.push({
+      id: "security",
+      prompt: "Xác định 3 rủi ro lớn nhất về bảo mật dữ liệu và phân tích định tính.",
+      answerIntro:
+        "Rủi ro bảo mật cần nêu rõ tác động đến dữ liệu, vận hành, tuân thủ và uy tín; biện pháp nên có kiểm thử, phân quyền, mã hóa và giám sát.",
+      risks: domain.securityRisks,
+    });
+  }
+
+  if (domain.scopeRisks?.length) {
+    options.push({
+      id: "scope",
+      prompt: 'Xác định 3 rủi ro về mặt "Phạm vi dự án" (Scope Creep) và phân tích định tính.',
+      answerIntro:
+        "Scope creep là việc phạm vi phình ra ngoài baseline mà không kiểm soát tác động chi phí, tiến độ, chất lượng và nguồn lực.",
+      risks: domain.scopeRisks,
+    });
+  }
+
+  return options;
+}
+
+function buildRiskRows(domain, random, riskList = domain.risks) {
+  const selectedRisks = sample(random, riskList, 3);
   const probabilities = [10, 15, 20, 25, 30, 35, 40];
   const impacts = [20, 30, 40, 50, 60, 80, 100, 150, 200];
 
@@ -404,6 +539,21 @@ function buildRiskRows(domain, random) {
     response: riskResponseFor(risk),
     owner: riskOwnerFor(domain, risk),
   }));
+}
+
+function buildRiskQuestion(domain, random) {
+  const option = pick(random, riskOptionsFor(domain));
+  const risks = buildRiskRows(domain, random, option.risks);
+  const emvRisk = pick(random, risks);
+  const emv = (emvRisk.probability / 100) * emvRisk.impact;
+
+  return {
+    risks,
+    emvRisk,
+    emv,
+    prompt: `a. ${option.prompt}\n\nb. Rủi ro "${emvRisk.risk}" có xác suất ${emvRisk.probability}%, thiệt hại dự kiến ${formatMoney(emvRisk.impact)}. Tính EMV và đề xuất dự phòng.`,
+    answer: `a. Bảng phân tích định tính:\n\n${riskTable(risks)}\n\n${option.answerIntro} Rủi ro có EMV/điểm cao hơn nên được theo dõi sát hơn trong risk register.\n\nb. Tính EMV\nEMV = Probability x Impact = ${emvRisk.probability}% x ${formatMoney(emvRisk.impact)} = ${formatMoney(emv)}.\n\nÝ nghĩa: EMV là giá trị tiền tệ kỳ vọng của rủi ro, dùng để ước lượng mức dự phòng hợp lý chứ không phải chắc chắn sẽ mất đúng số tiền này.\n\nĐề xuất dự phòng: dùng ${formatMoney(emv)} làm cơ sở contingency reserve cho rủi ro này, nhưng vẫn phải có biện pháp giảm thiểu cụ thể, trigger cảnh báo và owner chịu trách nhiệm. Nếu rủi ro có tác động rất cao, nên chuẩn bị thêm fallback plan.`,
+  };
 }
 
 function riskTable(rows) {
@@ -435,6 +585,31 @@ function buildProjectContext(domain, team, random) {
 }
 
 function buildEvmQuestion(random, bac) {
+  if (random() < 0.45) {
+    const plannedPercent = pick(random, [0.25, 0.3, 1 / 3, 0.4, 0.5]);
+    const actualPercent = clamp(plannedPercent + pick(random, [-0.12, -0.1, -0.08, -0.05, 0, 0.05]), 0.1, 0.85);
+    const pv = roundToFive(bac * plannedPercent);
+    const ev = roundToFive(bac * actualPercent);
+    const costFactor = pick(random, [0.9, 0.95, 1, 1.05, 1.08, 1.12, 1.2]);
+    const actualCost = roundToFive(ev * costFactor);
+    const result = calculateEvm({
+      bac,
+      plannedPercent: pv / bac,
+      actualPercent: ev / bac,
+      actualCost,
+    });
+
+    return {
+      mode: "direct",
+      bac,
+      checkpointDay: pick(random, [30, 40, 45, 50, 60]),
+      plannedPercent: pv / bac,
+      actualPercent: ev / bac,
+      actualCost,
+      result,
+    };
+  }
+
   const stageCount = pick(random, [3, 4, 5]);
   const completedStage = pick(random, Array.from({ length: stageCount - 1 }, (_, index) => index + 1));
   const plannedPercent = completedStage / stageCount;
@@ -446,6 +621,7 @@ function buildEvmQuestion(random, bac) {
   const result = calculateEvm({ bac, plannedPercent, actualPercent, actualCost });
 
   return {
+    mode: "stages",
     bac,
     stageCount,
     completedStage,
@@ -494,6 +670,16 @@ function forecastUsingDisplayedCpi(evm) {
 }
 
 function evmBaseContext(evm) {
+  if (evm.mode === "direct") {
+    const r = evm.result;
+    return [
+      `Sau ${evm.checkpointDay} ngày làm việc, dự án ghi nhận các chỉ số:`,
+      `- PV = ${formatMoney(r.pv)}.`,
+      `- EV = ${formatMoney(r.ev)}.`,
+      `- AC = ${formatMoney(r.ac)}.`,
+    ].join("\n");
+  }
+
   return [
     `Dự án chia làm ${evm.stageCount} giai đoạn bằng nhau. Hết giai đoạn ${evm.completedStage}:`,
     `- Theo kế hoạch đã hoàn thành ${Math.round(evm.plannedPercent * 100)}% công việc.`,
@@ -687,16 +873,17 @@ function buildEvmVariant(random, evm) {
 }
 
 function buildContractQuestion(random) {
-  const targetCost = pick(random, [80, 90, 100, 120, 150, 180, 200]);
-  const targetFee = pick(random, [8, 10, 12, 15, 18, 20]);
+  const targetCost = pick(random, [60, 80, 90, 100, 120, 150, 180, 200]);
+  const targetFee = pick(random, [6, 8, 10, 12, 15, 18, 20]);
   const [buyerShare, sellerSharePercent] = pick(random, [
+    [50, 50],
     [70, 30],
     [75, 25],
     [80, 20],
     [60, 40],
   ]);
   const sellerShare = sellerSharePercent / 100;
-  const delta = pick(random, [-30, -20, -10, 0, 10, 20, 30]);
+  const delta = pick(random, [-30, -20, -10, -4, 0, 10, 20, 30]);
   const actualCost = Math.max(40, targetCost + delta);
   const result = calculateIncentive({ targetCost, targetFee, actualCost, sellerShare });
   return { targetCost, targetFee, buyerShare, sellerSharePercent, sellerShare, actualCost, result };
@@ -782,6 +969,23 @@ function buildCommunicationVariant(random, { domain, channelsN, channels }) {
         "| Tri thức dự án | Wiki/Confluence/Notion | Lưu quy trình, FAQ, hướng dẫn triển khai và project archives |",
         "",
         "Kết luận: công nghệ chỉ là công cụ hỗ trợ. PM cần quy định rõ ai cập nhật, cập nhật khi nào, tài liệu đặt ở đâu, phiên bản nào là chính thức và khi nào phải escalation.",
+      ].join("\n"),
+    },
+    {
+      id: "project-archive",
+      prompt: "Phân tích tầm quan trọng của việc lưu trữ tài liệu dự án (Project Archive).",
+      answer: [
+        "b. Tầm quan trọng của Project Archive",
+        "Project Archive là nơi lưu toàn bộ tài liệu chính thức sau và trong dự án: charter/SOW, kế hoạch, baseline, yêu cầu, thiết kế, RACI, biên bản họp, quyết định thay đổi, test case, nghiệm thu, hợp đồng, issue log, risk register và lessons learned.",
+        "",
+        "| Lợi ích | Ý nghĩa trong dự án |",
+        "|---|---|",
+        `| Truy vết quyết định | Khi có tranh luận về ${deliverables}, PM xem lại biên bản, change request và người phê duyệt |`,
+        "| Bàn giao và vận hành | Đội vận hành có tài liệu cấu hình, hướng dẫn, tài khoản, checklist và tiêu chí nghiệm thu |",
+        "| Kiểm soát rủi ro/pháp lý | Có bằng chứng về phê duyệt, phạm vi, bảo mật, nghiệm thu và thay đổi hợp đồng |",
+        "| Học cho dự án sau | Lessons learned giúp ước tính, truyền thông và xử lý rủi ro tốt hơn ở dự án tiếp theo |",
+        "",
+        "Cách làm tốt: đặt cấu trúc thư mục chuẩn, phân quyền rõ, quy tắc đặt tên phiên bản, lưu bản chính thức, có owner cập nhật và khóa/lưu trữ khi đóng dự án.",
       ].join("\n"),
     },
     {
@@ -879,6 +1083,20 @@ function buildCommunicationVariant(random, { domain, channelsN, channels }) {
         "Điểm quan trọng: mỗi dòng cần có người nhận, nội dung, kênh, tần suất và người chịu trách nhiệm gửi/cập nhật.",
       ].join("\n"),
     },
+    {
+      id: "sponsor-updates",
+      prompt: "Đề xuất 03 phương pháp truyền thông để đảm bảo khách hàng/Sponsor nắm bắt kịp thời tiến độ.",
+      answer: [
+        "b. Ba phương pháp truyền thông cho Sponsor",
+        `Với dự án ${domain.name}, Sponsor không cần mọi chi tiết kỹ thuật nhưng cần biết tiến độ, chi phí, rủi ro, thay đổi phạm vi và quyết định đang chờ duyệt.`,
+        "",
+        "1. Weekly status report dạng push: PM gửi email/báo cáo 1 trang mỗi tuần gồm % hoàn thành, mốc đã đạt, CPI/SPI nếu có, issue/risk lớn, quyết định cần sponsor hỗ trợ.",
+        "2. Dashboard dùng pull communication: dashboard/PMIS cập nhật realtime hoặc hằng tuần để Sponsor tự xem trạng thái task, mốc, rủi ro, chi phí và blocker.",
+        "3. Họp milestone hoặc steering meeting dạng interactive: dùng khi cần ra quyết định, duyệt change request, xử lý rủi ro lớn hoặc demo kết quả quan trọng.",
+        "",
+        "Kết luận: nên kết hợp push, pull và interactive. Báo cáo giúp sponsor nhận thông tin chính thức; dashboard giúp theo dõi nhanh; họp giúp ra quyết định kịp thời.",
+      ].join("\n"),
+    },
   ];
 
   return pick(random, variants);
@@ -892,12 +1110,12 @@ export function generateExam(seed = makeSeed()) {
   const theory = pick(random, q1Theory);
   const raci = buildRaci(domain, random);
   const theoryAnswer = buildQ1TheoryAnswer(theory, domain, team, raci);
-  const risks = buildRiskRows(domain, random);
-  const emvRisk = pick(random, risks);
-  const emv = (emvRisk.probability / 100) * emvRisk.impact;
+  const q2 = buildRiskQuestion(domain, random);
   const evm = buildEvmQuestion(random, context.bac);
   const q3 = buildEvmVariant(random, evm);
-  const channelsN = totalPeople(team);
+  const internalPeople = totalPeople(team);
+  const externalPeople = domain.externalPeople ? pick(random, domain.externalPeople) : pick(random, [0, 0, 1, 2, 3]);
+  const channelsN = internalPeople + externalPeople;
   const channels = (channelsN * (channelsN - 1)) / 2;
   const q4b = buildCommunicationVariant(random, { domain, channelsN, channels });
   const contract = buildContractQuestion(random);
@@ -927,8 +1145,8 @@ export function generateExam(seed = makeSeed()) {
         points: 2,
         title: "Câu 2",
         tags: ["Risk", "EMV"],
-        prompt: `a. Xác định 3 rủi ro lớn của dự án và phân tích định tính theo Xác suất, Ảnh hưởng, Biện pháp ứng phó.\n\nb. Rủi ro "${emvRisk.risk}" có xác suất ${emvRisk.probability}%, thiệt hại dự kiến ${formatMoney(emvRisk.impact)}. Tính EMV và đề xuất dự phòng.`,
-        answer: `a. Bảng phân tích định tính:\n\n${riskTable(risks)}\n\nCách giải thích: phân tích định tính không chỉ liệt kê rủi ro. Cần nêu xác suất, ảnh hưởng, mức ưu tiên, owner và biện pháp phản ứng. Rủi ro có EMV/điểm cao hơn nên được theo dõi sát hơn trong risk register.\n\nb. Tính EMV\nEMV = Probability x Impact = ${emvRisk.probability}% x ${formatMoney(emvRisk.impact)} = ${formatMoney(emv)}.\n\nĐề xuất dự phòng: dùng ${formatMoney(emv)} làm cơ sở contingency reserve cho rủi ro này, nhưng vẫn phải có biện pháp giảm thiểu cụ thể, trigger cảnh báo và owner chịu trách nhiệm. Nếu rủi ro có tác động rất cao, nên chuẩn bị thêm fallback plan.`,
+        prompt: q2.prompt,
+        answer: q2.answer,
       },
       {
         id: "q3",
@@ -943,7 +1161,7 @@ export function generateExam(seed = makeSeed()) {
         points: 2,
         title: "Câu 4",
         tags: ["Communications"],
-        prompt: `Dự án có tổng cộng ${channelsN} thành viên.\n\na. Tính số kênh truyền thông.\n\nb. ${q4b.prompt}`,
+        prompt: `${externalPeople ? `Dự án có ${internalPeople} người nội bộ và ${externalPeople} người phía đối tác/khách hàng.` : `Dự án có tổng cộng ${channelsN} thành viên.`}\n\na. Tính số kênh truyền thông.\n\nb. ${q4b.prompt}`,
         answer: `a. Tính số kênh\nCông thức: n(n-1)/2. Với n = ${channelsN}, số kênh = ${channelsN} x ${channelsN - 1} / 2 = ${channels} kênh.\n\nÝ nghĩa: số kênh tăng rất nhanh khi thêm người, nên dự án đông thành viên phải có communication plan, kênh lưu trữ chung và quy tắc escalation rõ ràng.\n\n${q4b.answer}`,
       },
       {
